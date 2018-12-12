@@ -20,7 +20,7 @@ mongoose.connect(db, { useNewUrlParser: true })
 
 
 //Use Routes
-app.use('api/Items', items);
+app.use('/api/items', items);
 
 const port = process.env.PORT;
 
