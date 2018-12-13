@@ -9,6 +9,7 @@ import store from './store';
 import AppNavbar from './components/AppNavbar';
 import AdventureList from './components/AdventureList';
 import ItemModal from './components/ItemModal'
+import MediaHeader from './components/MediaHeader'
 
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
       <Provider store={store}>
         <div className="App">
           <AppNavbar />
+          <MediaHeader />
           <Container>
             <ItemModal />
             <AdventureList />
