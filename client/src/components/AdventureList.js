@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { Container, ListGroup, ListGroupItem, Button } from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
-import { getItems, deleteItem } from '../actions/itemActions';
+import { getItems, deleteItem, addItems } from '../actions/itemActions';
 
 import PropTypes from 'prop-types'
 
@@ -24,15 +24,15 @@ class AdventureList extends Component {
       <Container>
         <ListGroup color='dark'>
           <TransitionGroup>
-            {items.map(({ id, name }) => {
+            {items.map(({ _id, name }) => {
               return (
-                <CSSTransition key={id} timeout={500} classNames='fade'>
+                <CSSTransition key={_id} timeout={500} classNames='fade'>
                   <ListGroupItem color="dark">
                     <Button
                       className="remove-btn"
                       color='danger'
                       size='sm'
-                      onClick={this.onDeleteClick.bind(this, id)}
+                      onClick={this.onDeleteClick.bind(this, _id)}
                     >
                       &times;</Button>
                     {name}
@@ -56,4 +56,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps, { getItems, deleteItem })(AdventureList);
+export default connect(mapStateToProps, { getItems, deleteItem, addItems })(AdventureList);
