@@ -24,7 +24,7 @@ class AdventureList extends Component {
       <Container>
         <ListGroup color='dark'>
           <TransitionGroup>
-            {items.map(({ _id, name, assignedTo }) => {
+            {items.map(({ _id, name }) => {
               return (
                 <CSSTransition key={_id} timeout={500} classNames='fade'>
                   <ListGroupItem color="dark">
@@ -35,14 +35,7 @@ class AdventureList extends Component {
                       onClick={this.onDeleteClick.bind(this, _id)}
                     >
                       &times;</Button>
-                    {name}: assigned to {assignedTo}
-                    <Button
-                      className="update-btn"
-                      color='success'
-                      size='sm'
-                      onClick={this.onDeleteClick.bind(this, _id)}
-                    >
-                      edit</Button>
+                    {name}
                   </ListGroupItem>
                 </CSSTransition>
               )
