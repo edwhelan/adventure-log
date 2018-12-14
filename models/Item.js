@@ -6,6 +6,10 @@ const ItemSchema = new Schema({
     type: String,
     required: true
   },
+  assignedTo: {
+    type: String,
+    default: 'anonymous'
+  },
   date: {
     type: Date,
     default: Date.now

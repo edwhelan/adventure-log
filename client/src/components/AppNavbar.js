@@ -29,8 +29,9 @@ class AppNavbar extends Component {
             <NavbarToggler onClick={this.toggle}></NavbarToggler>
             <Collapse isOpen={this.state.isOpen} navbar >
               <Nav className='ml-auto' navbar>
-                <NavItem>
-                  <NavLink href='https://www.github.com/edwhelan'>GitHub</NavLink>
+                <NavItem className='row'>
+                  <NavLink href='http://www.EdWhe.com'>Portfolio</NavLink>
+                  <NavLink href='https://www.github.com/edwhelan/adventure-log'>GitHub</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_ITEMS, ADD_ITEMS, DELETE_ITEM, ITEMS_LOADING } from '../actions/types';
+import { GET_ITEMS, ADD_ITEMS, DELETE_ITEM, ITEMS_LOADING, UPDATE_ITEM_ASSIGNED } from '../actions/types';
 
 export const getItems = () => dispatch => {
   dispatch(setItemsLoading());
@@ -22,6 +22,16 @@ export const deleteItem = (id) => dispatch => {
       dispatch({
         type: DELETE_ITEM,
         payload: id
+      })
+    })
+};
+
+export const updateItemAssigned = (id, assigned) => dispatch => {
+  axios.put(`/api/items/${id}`, assigned)
+    .then(res => {
+      dispatch({
+        type: UPDATE_ITEM_ASSIGNED,
+        payload: res.data
       })
     })
 };

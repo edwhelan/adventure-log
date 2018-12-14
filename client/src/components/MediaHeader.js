@@ -10,7 +10,7 @@ const MediaHeader = () => {
       </Media>
       <Media body>
         <Media heading>
-          Add items to your list
+          Add items to your bottomless bag
         </Media>
         It's dangerous to go alone, take this! An app for budding adventurers to add items to a database. Future revisions will allow users to assign to a party member.
       </Media>
